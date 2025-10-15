@@ -8,30 +8,34 @@ class ElevatedButtonWidget extends StatelessWidget {
   const ElevatedButtonWidget({
     super.key,
     required this.title,
-    required this.iconData,
+    required this.iconData, required this.onTap,
   });
   final String title;
   final IconData iconData;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity.w,
-      height: 44.0.h,
-      margin: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 16.0.h),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(32.0.r),
-        color: ColorApp.blue,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            style: getBodyStyle(context: context, color: ColorApp.white),
-          ),
-          Gap(4.0.w),
-          Icon(iconData, size: 20.0.sp, color: ColorApp.white),
-        ],
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity.w,
+        height: 44.0.h,
+        margin: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 16.0.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(32.0.r),
+          color: ColorApp.blue,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              title,
+              style: getBodyStyle(context: context, color: ColorApp.white),
+            ),
+            Gap(4.0.w),
+            Icon(iconData, size: 20.0.sp, color: ColorApp.white),
+          ],
+        ),
       ),
     );
   }

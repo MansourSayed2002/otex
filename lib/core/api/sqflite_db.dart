@@ -1,102 +1,104 @@
 import 'dart:developer';
-
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 class SqfliteDb {
+  static final SqfliteDb _instance = SqfliteDb._internal();
+  factory SqfliteDb() => _instance;
+  SqfliteDb._internal();
+
   static Database? _db;
 
-  static Future<Database?> get db async {
-    if (_db == null) {
-      _db = await initDb();
-      return _db;
-    } else {
-      return _db;
-    }
+  static const String productDb = "products";
+  static const String plansDb = "plans";
+  static const String categoriesDb = "categories";
+
+  Future<Database> get database async {
+    if (_db != null) return _db!;
+    _db = await _initDb();
+    return _db!;
   }
 
-  static initDb() async {
+  Future<Database> _initDb() async {
     String dataPath = await getDatabasesPath();
-
     String path = join(dataPath, 'otex.db');
 
-    Database myData = await openDatabase(path, onCreate: _onCreate, version: 1);
-
-    return myData;
+    final db = await openDatabase(path, version: 1, onCreate: _onCreate);
+    return db;
   }
 
-  static _onCreate(Database db, int version) async {
+  Future<void> _onCreate(Database db, int version) async {
     await db.execute('''
-      CREATE TABLE "plans" (
-            "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-            "name" TEXT,
-            "price" REAL,
-            "duration_days" INTEGER,
-            "highlight_days" INTEGER,
-            "features" TEXT,
-            "views_boost" INTEGER,
-            "created_at" TEXT
-          )
-''');
-    await db.execute('''
-      CREATE TABLE products (
-        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-        "category_id" INTEGER,
-        "title" TEXT,
-        "discountprice" REAL,
-        "price" REAL,
-        "image_url" TEXT,
-        FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE
-      )
-''');
-    await db.execute('''
-      CREATE TABLE categories (
-        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-        "name" TEXT
+      CREATE TABLE plans (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        title TEXT,
+        price REAL,
+        duration_days INTEGER,
+        highlight_days INTEGER,
+        features TEXT,
+        views_boost INTEGER,
+        created_at TEXT
       )
     ''');
+
+    await db.execute('''
+      CREATE TABLE categories (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT
+      )
+    ''');
+
+    await db.execute('''
+      CREATE TABLE products (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        category_id INTEGER,
+        title TEXT,
+        discountprice REAL,
+        price REAL,
+        image_url TEXT,
+        sale TEXT,
+        FOREIGN KEY (category_id) REFERENCES categories (id) ON DELETE CASCADE
+      )
+    ''');
+
     await db.execute('''
       CREATE TABLE favorites (
-        "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-        "product_id" INTEGER UNIQUE,
-        "is_favorite" INTEGER DEFAULT 1,
-         FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE CASCADE
-  )
-''');
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        product_id INTEGER UNIQUE,
+        is_favorite INTEGER DEFAULT 1,
+        FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE CASCADE
+      )
+    ''');
+
     log("Database Created");
   }
 
-  static Future<List<Map>> selectData(String table) async {
-    Database? myDb = await db;
-    List<Map> response = await myDb!.query(table);
+  Future<List<Map<String, dynamic>>> selectData(String table) async {
+    final db = await database;
+    final response = await db.query(table);
     return response;
   }
 
-  static Future<int> insertData({
+  Future<int> insertData({
     required String table,
     required Map<String, Object?> values,
   }) async {
-    Database? myDb = await db;
-    int response = await myDb!.insert(table, values);
-    return response;
+    final db = await database;
+    return await db.insert(table, values);
   }
 
-  static Future<int> updateData({
+  Future<int> updateData({
     required String table,
     required Map<String, Object?> values,
     required String where,
   }) async {
-    Database? myDb = await db;
-    int response = await myDb!.update(table, values, where: where);
-    return response;
+    final db = await database;
+    return await db.update(table, values, where: where);
   }
 
-  static Future<int> deleteData({
-    required String table,
-    required String where,
-  }) async {
-    Database? myDb = await db;
-    int response = await myDb!.delete(table, where: where);
-    return response;
+  Future<int> deleteData({required String table, required String where}) async {
+    final db = await database;
+    return await db.delete(table, where: where);
   }
 }

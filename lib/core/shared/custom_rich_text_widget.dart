@@ -11,7 +11,6 @@ class CustomRichTextWidget extends StatelessWidget {
   });
   final String textone;
   final String texttwo;
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,6 +27,7 @@ class CustomRichTextWidget extends StatelessWidget {
         Expanded(
           child: Text(
             "/$texttwo",
+
             style: TextStyle(
               color: ColorApp.charcoal.withAlpha(100),
               fontSize: 14.sp,

@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
           if (value == 2) {
-            context.push(AddAdvertisement());
+            context.push(AddAdvertisementScreen());
           } else {
             setState(() {
               currentIndex = value;

@@ -8,6 +8,7 @@ class ImageApp {
   static const String sweatshirt = 'assets/images/Picture.png';
   static const String shirt = 'assets/images/Picture (1).png';
   static const String shoes = 'assets/images/Picture (3).png';
+  static const String rectangle = 'assets/images/Rectangle 9.png';
   static const String logo =
       'assets/images/9d49f354-c245-4cac-9644-3d3ef4bf62b8_removalai_preview 1.png';
 }
@@ -23,4 +24,9 @@ class IconApp {
   static const String offer = 'assets/icons/offer.svg';
   static const String vector = 'assets/icons/Vector.svg';
   static const String badgeCompany = 'assets/icons/ic_round-corporate-fare.svg';
+  static const String acute = 'assets/icons/acute.svg';
+  static const String globe = 'assets/icons/globe.svg';
+  static const String keep = 'assets/icons/keep.svg';
+  static const String rocket = 'assets/icons/rocket.svg';
+  static const String workspacePremium = 'assets/icons/workspace_premium.svg';
 }

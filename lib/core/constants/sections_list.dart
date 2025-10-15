@@ -1,4 +1,4 @@
-import 'package:otex/core/class/sub_categoty_model.dart';
+import 'package:otex/core/model/sub_categoty_model.dart';
 import 'package:otex/core/constants/image_app.dart';
 import 'package:otex/core/constants/text_app.dart';
 
@@ -8,6 +8,13 @@ List<String> sectionsList = [
   TextApp.accessories,
   TextApp.electronics,
   TextApp.furniture,
+];
+
+List<SubCategotyModel> subCategotyListName = [
+  SubCategotyModel(name: TextApp.clothes),
+  SubCategotyModel(name: TextApp.accessories),
+  SubCategotyModel(name: TextApp.electronics),
+  SubCategotyModel(name: TextApp.furniture),
 ];
 
 List<SubCategotyModel> subCategotyList = [

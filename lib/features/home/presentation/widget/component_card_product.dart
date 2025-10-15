@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:otex/core/constants/image_app.dart';
-import 'package:otex/core/constants/product_list.dart';
 import 'package:otex/core/shared/custom_rich_text_widget.dart';
 import 'package:otex/core/theme/color_app.dart';
 import 'package:otex/core/theme/textstyle_app.dart';
+import 'package:otex/features/home/data/model/product_model.dart';
 
 class TitleAndPriceWidget extends StatelessWidget {
-  const TitleAndPriceWidget({super.key, required this.index});
-  final int index;
+  const TitleAndPriceWidget({super.key, required this.product});
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,7 +19,7 @@ class TitleAndPriceWidget extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                productList[index].name.toString(),
+                product.name.toString(),
                 overflow: TextOverflow.ellipsis,
                 style: getBodyStyle(
                   context: context,
@@ -36,8 +36,8 @@ class TitleAndPriceWidget extends StatelessWidget {
           children: [
             Expanded(
               child: CustomRichTextWidget(
-                textone: productList[index].discountprice.toString(),
-                texttwo: productList[index].price.toString(),
+                textone: product.discountprice.toString(),
+                texttwo: product.price.toString(),
               ),
             ),
             Gap(3.5.w),
@@ -50,8 +50,8 @@ class TitleAndPriceWidget extends StatelessWidget {
 }
 
 class SellsAndLogoCompany extends StatelessWidget {
-  const SellsAndLogoCompany({super.key, required this.index});
-  final int index;
+  const SellsAndLogoCompany({super.key, required this.product});
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -65,7 +65,7 @@ class SellsAndLogoCompany extends StatelessWidget {
             ),
             Gap(4.0.w),
             Text(
-              productList[index].sale.toString(),
+              product.sale.toString(),
               style: getSmallStyle(fontSize: 10.0.sp),
             ),
           ],
