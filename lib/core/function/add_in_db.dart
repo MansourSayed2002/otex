@@ -1,7 +1,7 @@
 import 'package:otex/core/api/sqflite_db.dart';
 import 'package:otex/features/add_advertisement/data/model/plans_model.dart';
 import 'package:otex/features/home/data/model/product_model.dart';
-import 'package:otex/core/model/sub_categoty_model.dart';
+import 'package:otex/features/home/data/model/sub_categoty_model.dart';
 
 Future<void> addInDb({required List data, required String table}) async {
   final db = await SqfliteDb().database;

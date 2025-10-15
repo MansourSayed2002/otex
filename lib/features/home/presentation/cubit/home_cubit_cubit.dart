@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:otex/core/class/api_result.dart';
-import 'package:otex/core/model/sub_categoty_model.dart';
+import 'package:otex/features/home/data/model/sub_categoty_model.dart';
 import 'package:otex/features/home/data/model/product_model.dart';
 import 'package:otex/features/home/data/repo/home_repo.dart';
 

@@ -29,4 +29,5 @@ class IconApp {
   static const String keep = 'assets/icons/keep.svg';
   static const String rocket = 'assets/icons/rocket.svg';
   static const String workspacePremium = 'assets/icons/workspace_premium.svg';
+  static const String material = 'assets/icons/material.svg';
 }

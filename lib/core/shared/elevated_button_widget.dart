@@ -8,10 +8,11 @@ class ElevatedButtonWidget extends StatelessWidget {
   const ElevatedButtonWidget({
     super.key,
     required this.title,
-    required this.iconData, required this.onTap,
+    this.iconData,
+    required this.onTap,
   });
   final String title;
-  final IconData iconData;
+  final IconData? iconData;
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {

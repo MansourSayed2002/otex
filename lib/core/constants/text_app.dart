@@ -20,5 +20,34 @@ class TextApp {
   static const String my = 'أعلاناتى';
   static const String myAccount = 'حسابى';
   static const String next = 'التالى';
-
+  static const String filter = 'فلترة';
+  static const String defualtBack = 'رجوع للأفتراضى';
+  static const String category = 'الفئة';
+  static const String realEstate = 'عقارات';
+  static const String villaSela = 'فلل البيع';
+  static const String change = 'تغيير';
+  static const String location = 'الموقع';
+  static const String egypt = 'مصر';
+  static const String monthlyInstalments = 'الأقساط الشهرية';
+  static const String type = 'النوع';
+  static const String numberOfRooms = 'عدد الغرف';
+  static const String room4 = '4 غرف';
+  static const String room5 = '5 غرف+';
+  static const String roomall = 'الكل';
+  static const String room2 = 'غرفتين';
+  static const String room3 = '3 غرف';
+  static const String twinHouse = "توين هاوس";
+  static const String villa = "فيلا منفصلة";
+  static const String townHouse = "تاون هاوس";
+  static const String price = 'السعر';
+  static const String lowPrice = 'اقل سعر ';
+  static const String highPrice = 'اكثر سعر ';
+  static const String payment = 'طريقة الدفع';
+  static const String any = 'أى';
+  static const String installment = 'تقسيط';
+  static const String cash = 'كاش';
+  static const String propertyCondition = 'حالة العقار';
+  static const String ready = 'جاهز';
+  static const String underConstruction = 'قيد الأنشاء';
+  static const String result = 'شاهد 10,000+ نتائج';
 }

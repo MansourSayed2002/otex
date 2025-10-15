@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:otex/core/class/api_result.dart';
-import 'package:otex/core/model/sub_categoty_model.dart';
+import 'package:otex/features/home/data/model/sub_categoty_model.dart';
 import 'package:otex/features/home/data/api/home_api.dart';
 import 'package:otex/features/home/data/model/product_model.dart';
 

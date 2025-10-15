@@ -1,4 +1,4 @@
-import 'package:otex/core/model/sub_categoty_model.dart';
+import 'package:otex/features/home/data/model/sub_categoty_model.dart';
 import 'package:otex/core/constants/image_app.dart';
 import 'package:otex/core/constants/text_app.dart';
 
