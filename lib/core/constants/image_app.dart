@@ -5,7 +5,11 @@ class ImageApp {
   static const String phone = 'assets/images/Photo Container (2).png';
   static const String cosmetics = 'assets/images/Photo Container (3).png';
   static const String man = 'assets/images/Photo Container.png';
-  static const String shirt = 'assets/images/Picture.png';
+  static const String sweatshirt = 'assets/images/Picture.png';
+  static const String shirt = 'assets/images/Picture (1).png';
+  static const String shoes = 'assets/images/Picture (3).png';
+  static const String logo =
+      'assets/images/9d49f354-c245-4cac-9644-3d3ef4bf62b8_removalai_preview 1.png';
 }
 
 class IconApp {
@@ -18,4 +22,5 @@ class IconApp {
   static const String check = 'assets/icons/check.svg';
   static const String offer = 'assets/icons/offer.svg';
   static const String vector = 'assets/icons/Vector.svg';
+  static const String badgeCompany = 'assets/icons/ic_round-corporate-fare.svg';
 }

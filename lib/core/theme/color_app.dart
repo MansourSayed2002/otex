@@ -4,6 +4,7 @@ class ColorApp {
   static Color charcoal = Color(0xff090F1F);
   static Color orange = Color(0xffF95B1C);
   static Color blue = Color(0xff0079FE);
+  static Color darkblue = Color(0xff0062E2);
   static Color purple = Color(0xff3B4CF2);
   static Color green = Color(0xff3A813F);
   static Color red = Color(0xffFF4144);

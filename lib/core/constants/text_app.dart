@@ -13,4 +13,10 @@ class TextApp {
   static const String building = 'مبانى';
   static const String freeShipping = 'شحن مجانى';
   static const String anyOrderNow = 'لأى عرض تطلبه دلوقتى !';
+  static const String titlejacket = "جاكيت من الصوف مناسب";
+  static const String home = 'الرئيسية';
+  static const String chat = 'محادثة';
+  static const String add = 'أضف أعلان';
+  static const String my = 'أعلاناتى';
+  static const String myAccount = 'حسابى';
 }

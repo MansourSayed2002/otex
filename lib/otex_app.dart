@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:otex/core/theme/theme_app.dart';
-import 'package:otex/features/home/presentation/screen/home_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:otex/features/main/main_screen.dart';
 
 class OtexApp extends StatelessWidget {
   const OtexApp({super.key});
@@ -24,7 +24,7 @@ class OtexApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          home: HomeScreen(),
+          home: MainScreen(),
         );
       },
     );
