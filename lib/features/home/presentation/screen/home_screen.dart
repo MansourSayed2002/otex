@@ -21,6 +21,7 @@ class HomeScreen extends StatelessWidget {
             SectionsProductWidget(),
             Gap(33.0.h),
             OfferCardWidget(),
+            Gap(20.0.h),
             Expanded(child: ProductsWidget()),
           ],
         ),

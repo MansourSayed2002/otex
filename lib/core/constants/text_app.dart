@@ -19,4 +19,6 @@ class TextApp {
   static const String add = 'أضف أعلان';
   static const String my = 'أعلاناتى';
   static const String myAccount = 'حسابى';
+  static const String next = 'التالى';
+
 }
